@@ -1,7 +1,5 @@
 # Amadeus
-
-## Descripción
-Amadeus es un proyecto Angular diseñado para [describir el viaje de tus sueños.
+Amadeus es un proyecto de Angular diseñado para describir cual es el viaje de tus sueños.
 
 ## Instalación
 Para instalar y configurar el proyecto localmente, sigue estos pasos:
@@ -9,7 +7,7 @@ Para instalar y configurar el proyecto localmente, sigue estos pasos:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/tu-usuario/amadeus.git
-
+    ```
 
 2. Navega al directorio del proyecto:
    ```bash
@@ -18,12 +16,11 @@ Para instalar y configurar el proyecto localmente, sigue estos pasos:
 
 3. instala las dependecias: 
     ```
-    npm installa
+    npm install
     ```
 
 ## Uso
-ejecuta el siguente comando:
-
+Correr el servidor local (puerto por defecto localhost:4200)
 ```
 ng serve
 ```
