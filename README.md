@@ -32,4 +32,4 @@ ng serve
 Luego, abre tu navegador y navega a http://localhost:4200/ una vez allí descubre tu viaje
 
 ## Mensaje Final
-Gracias por leer, disfruta de tu viaje
+Gracias por leer, disfruta de tu viaje.
