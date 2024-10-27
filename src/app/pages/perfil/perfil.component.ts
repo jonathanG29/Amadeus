@@ -94,7 +94,8 @@ export class PerfilComponent {
     } else{
       let regEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
       
-      if(regEmail.test(correoUsuario)){
+      const dataAcceptedElement = document.getElementById("data-accepted") as HTMLInputElement | null;
+      if(regEmail.test(correoUsuario) && dataAcceptedElement.checked == true){
         
         this.estadoCorreo = "";
         this.controlBoton = false;
