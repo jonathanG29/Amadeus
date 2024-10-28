@@ -9,6 +9,13 @@ import { RouterLink } from '@angular/router';
 import { DestinoService } from '@services/destino.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
+/**
+ * Enumeración de imágenes de avatar para seleccionar una imagen de avatar
+ * en el componente PerfilComponent. Esto nos permite seleccionar una imagen
+ * de avatar de forma más sencilla y segura. Ademas, si se desea hacer cambios
+ * en las imágenes de avatar, solo se debe modificar el enum AvatarImages.
+ */
+
 enum AvatarImages {
   AVATAR1 = 'assets/img/img-avatar/ava11.png',
   AVATAR2 = 'assets/img/img-avatar/ava12.png',
