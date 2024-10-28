@@ -1,27 +1,7 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  QueryList,
-  ViewChildren,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DestinoService } from '@services/destino.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-
-/**
- * Enumeración de imágenes de avatar para seleccionar una imagen de avatar
- * en el componente PerfilComponent. Esto nos permite seleccionar una imagen
- * de avatar de forma más sencilla y segura. Ademas, si se desea hacer cambios
- * en las imágenes de avatar, solo se debe modificar el enum AvatarImages.
- */
-
-enum AvatarImages {
-  AVATAR1 = 'assets/img/img-avatar/ava11.png',
-  AVATAR2 = 'assets/img/img-avatar/ava12.png',
-  AVATAR3 = 'assets/img/img-avatar/ava13.png',
-  AVATAR4 = 'assets/img/img-avatar/ava14.png',
-}
 
 @Component({
   selector: 'app-perfil',
@@ -30,17 +10,13 @@ enum AvatarImages {
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css'
 })
-export class PerfilComponent implements AfterViewInit {
-  // Seleccionar elementos del DOM con @ViewChildren para evitar manipulación directa del DOM
-  @ViewChildren('slidesElements') slidesElements!: QueryList<ElementRef>;
-  @ViewChildren('dotElement') dotElemets!: QueryList<ElementRef>;
+export class PerfilComponent {
 
-  constructor(public destinoService: DestinoService) {}
+  constructor(public destinoService: DestinoService){}
 
   slideIndex: number = 1;
 
-  // ngAfterViewInit se ejecuta después de que Angular haya inicializado las vistas del componente
-  ngAfterViewInit(): void {
+  ngOnInit() {
     this.showSlides(this.slideIndex);
   }
 
@@ -53,33 +29,19 @@ export class PerfilComponent implements AfterViewInit {
   }
 
   showSlides(n: number): void {
-    /**
-     * Convertir QueryList en un array para poder iterar sobre cada elemento del DOM, 
-     * en este caso los slides y los dots.
-     */
-    const slides = this.slidesElements.toArray();
-    const dots = this.dotElemets.toArray();
-
-    if (n > slides.length) {
-      this.slideIndex = 1;
+    let i: number;
+    let slides: HTMLCollectionOf<Element> = document.getElementsByClassName("container__main__card__avatar--img");
+    let dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dot");
+    if (n > slides.length) { this.slideIndex = 1 }
+    if (n < 1) { this.slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      (slides[i] as HTMLElement).style.display = "none";
     }
-    if (n < 1) {
-      this.slideIndex = slides.length;
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
     }
-
-    slides.forEach((slide) => {
-      slide.nativeElement.style.display = 'none';
-    });
-
-    dots.forEach((dot) => {
-      dot.nativeElement.className = dot.nativeElement.className.replace(
-        ' active',
-        ''
-      );
-    });
-
-    slides[this.slideIndex - 1].nativeElement.style.display = 'block';
-    dots[this.slideIndex - 1].nativeElement.className += ' active';
+    (slides[this.slideIndex - 1] as HTMLElement).style.display = "block";
+    dots[this.slideIndex - 1].className += " active";
   }
 
   nombre = new FormControl();
@@ -92,19 +54,19 @@ export class PerfilComponent implements AfterViewInit {
     
     switch(this.slideIndex){
       case 1: {
-        this.destinoService.avatar = AvatarImages.AVATAR1;
+        this.destinoService.avatar = "../../../assets/img/img-avatar/ava11.png";
         break;
       }
       case 2: {
-        this.destinoService.avatar = AvatarImages.AVATAR2;
+        this.destinoService.avatar = "../../../assets/img/img-avatar/ava12.png";
         break;
       }
       case 3: {
-        this.destinoService.avatar = AvatarImages.AVATAR3;
+        this.destinoService.avatar = "../../../assets/img/img-avatar/ava13.png";
         break;
       }
       case 4: {
-        this.destinoService.avatar = AvatarImages.AVATAR4;
+        this.destinoService.avatar = "../../../assets/img/img-avatar/ava14.png";
         break;
       }
     }
