@@ -1,0 +1,10 @@
+<section class="container__main__card__data">
+  <!-- Input para el nombre del usuario con control de formulario y evento keyup -->
+  <input class="container__main__card__data--input" type="text" placeholder="Nombre" [formControl]="nombre" (keyup)="verificarNomb($event)">
+  <!-- Input para el correo del usuario con control de formulario y evento keyup -->
+  <input class="container__main__card__data--input" type="email" placeholder="Correo electrónico" [formControl]="correo" (keyup)="verificarCorreo($event)">
+  <!-- Etiqueta para mostrar el estado de validación del correo -->
+  <label class="container__main__card__data--alert">{{estadoCorreo}}</label>
+  <!-- Botón para enviar el formulario, navegar a la siguiente página, y está deshabilitado basado en la validación del correo -->
+  <button class="container__main__card__data--button" type="button" (click)="datosUsuario()" routerLink="/tarjetas" [disabled]="controlBoton">¡Próxima aventura!</button>
+</section>

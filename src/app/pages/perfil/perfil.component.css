@@ -6,14 +6,13 @@
     font-family: sans-serif;
 }
 
-
 .container__main__card{
     display: grid;
 
     grid-template-columns: 400px 400px;
     grid-template-rows: 400px 48px;
 
-    grid-template-areas: 
+    grid-template-areas:
     'gridAvatar gridData'
     'gridSelect gridData';
 }
@@ -28,8 +27,8 @@
 
         grid-template-columns: 400px;
         grid-template-rows: 400px 48px auto;
-        
-        grid-template-areas: 
+
+        grid-template-areas:
         'gridAvatar'
         'gridSelect'
         'gridData';
@@ -81,7 +80,7 @@
         object-fit: contain;
         border-radius: 50%;
         overflow: hidden;
-        
+
     }
 }
 
@@ -201,7 +200,7 @@
     padding: 0rem 0.5rem;
     /* font-size: larger; */
     text-align: center;
-    
+
 
     &:hover {
         background-color: var(--colorButtonHover-dark);
@@ -251,7 +250,7 @@
     &:active {
         background-color: var(--colorButtonActive-dark);
     }
-} 
+}
 
 .buttonBG--light {
     border-style: none;
@@ -268,7 +267,7 @@
     &:active {
         background-color: var(--colorButtonActive-light);
     }
-} 
+}
 /*  --- FIN --- Estilos Button  */
 
 /*  --- INICIO --- @keyframe  */
