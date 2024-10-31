@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { DestinoService } from '../../servicios/destino.service';
 import { filter, Subscription } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
@@ -12,26 +12,38 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class UsuarioComponent implements OnInit, OnDestroy {
 
+  constructor(public destinoService: DestinoService, public router: Router){}
+
   private routerSubscription!: Subscription;
 
+  esVisible = signal(false);
   avatar: any;
-
-  constructor(public destinoService: DestinoService, public router: Router){
-    console.log(destinoService);
-    
-  }
+  nombre: any;
+  correo: any;
 
   ngOnInit(): void {
     this.routerSubscription = this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
-        console.log("render");
-        this.obtenerAvatar()
+        this.obtenerDatosUsuario()
       });
   }
 
-  obtenerAvatar(){
+  obtenerDatosUsuario(){
     this.avatar = this.destinoService.avatar;
+    this.nombre = this.destinoService.nombreS;
+    this.correo = this.destinoService.correoS;
+  }
+
+  handleVisible(){
+    this.esVisible.set(!this.esVisible());
+  }
+
+  cerrarSesion(){
+    this.destinoService.avatar = "";
+    this.destinoService.nombreS = "";
+    this.destinoService.correoS = "";
+    this.router.navigate(["/index"])
   }
 
 
@@ -41,5 +53,4 @@ export class UsuarioComponent implements OnInit, OnDestroy {
       this.routerSubscription.unsubscribe();
     }
   }
-
 }
