@@ -3,11 +3,12 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { FormValidationService } from '../../services/form-validation.service';
 import { DestinoService } from '../../servicios/destino.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-form',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, HttpClientModule],
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
