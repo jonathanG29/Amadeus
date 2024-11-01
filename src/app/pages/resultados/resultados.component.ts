@@ -37,7 +37,7 @@ export class ResultadosComponent {
 
     switch(this.pDestino){
       case "Playa":
-        
+
         switch(this.pClimatica){
           case "Caluroso":
             switch(this.dViaje){
@@ -48,21 +48,21 @@ export class ResultadosComponent {
                   this.destinoService.destinoE = "Ibiza";
 
                 } else if(this.edad == "Menos de 30 años" && this.pActividad == "Relax y Bienestar" && this.pAlojamiento == "Hotel de Lujo"){
-                  
+
                   this.destinoService.destinoA = "Playa del Carmen";
                   this.destinoService.destinoE = "Santori";
 
                 } else if(this.edad == "30-50 años" && this.pActividad == "Cultura y Museos" && this.pAlojamiento == "Hotel de Lujo"){
-                  
-                  
+
+
                   this.destinoService.destinoA = "Honolulu";
                   this.destinoService.destinoE = "Malta";
                 }
                 break;
               case "Menos de una semana":
                 if(this.edad == "Menos de 30 años" && this.pActividad == "Cultura y Museos" && this.pAlojamiento == "Airbnb"){
-                  
-                  
+
+
                   this.destinoService.destinoA = "Cartagena";
                   this.destinoService.destinoE = "Barcelona";
                 }
@@ -73,13 +73,13 @@ export class ResultadosComponent {
             switch(this.dViaje){
               case "1-2 semanas":
                 if(this.edad == "Menos de 30 años" && this.pActividad == "Cultura y Museos" && this.pAlojamiento == "Hostal o Albergue"){
-                  
-                  
+
+
                   this.destinoService.destinoA = "San Juan";
                   this.destinoService.destinoE = "Niza";
 
                 } else if (this.edad == "30-50 años" && this.pActividad == "Cultura y Museos" && this.pAlojamiento == "Hotel de Lujo"){
-                  
+
                   this.destinoService.destinoA = "Río de Janeiro";
                   this.destinoService.destinoE = "Lisboa";
 
@@ -89,7 +89,7 @@ export class ResultadosComponent {
                 break;
               case "Más de dos semanas":
                 if(this.edad == "Más de 50 años" && this.pActividad == "Relax y Bienestar" && this.pAlojamiento == "Airbnb"){
-                  
+
                   this.destinoService.destinoA = "Punta Cana";
                   this.destinoService.destinoE = "Algarve";
 
@@ -117,29 +117,29 @@ export class ResultadosComponent {
 
                 }
               } else if(this.edad == "Menos de 30 años" && this.pAlojamiento == "Hostal o Albergue" && this.pActividad == "Deportes y Aventuras"){
-                  
+
                 this.destinoService.destinoA = "Bariloche";
                 this.destinoService.destinoE = "Interlaken";
 
 
               } else if(this.edad == "30-50 años" && this.pAlojamiento == "Hotel de Lujo" && this.pActividad == "Deportes y Aventuras"){
-                
+
                 this.destinoService.destinoA = "Banff";
                 this.destinoService.destinoE = "Zermatt";
 
-                
+
               }
             }
             break;
           case "Templado":
             if(this.edad == "Más de 50 años" && this.pAlojamiento == "Airbnb" && this.pActividad == "Cultura y Museos" && this.dViaje == "1-2 semanas"){
-                
+
                 this.destinoService.destinoA = "Cusco";
                 this.destinoService.destinoE = "Granada";
 
 
             } else if(this.edad == "Menos de 30 años" && this.pAlojamiento == "Airbnb" && this.pActividad == "Deportes y Aventuras" && this.dViaje == "Más de dos semanas"){
-              
+
                 this.destinoService.destinoA = "Machu Picchu";
                 this.destinoService.destinoE = "Chamonix";
 
@@ -151,7 +151,7 @@ export class ResultadosComponent {
         switch(this.pClimatica){
           case "Caluroso":
             if(this.edad == "Más de 50 años" && this.pAlojamiento == "Hotel de Lujo" && this.pActividad == "Cultura y Museos" && this.dViaje == "1-2 semanas"){
-                
+
                 this.destinoService.destinoA = "Los Angeles";
                 this.destinoService.destinoE = "Roma";
 
@@ -159,7 +159,7 @@ export class ResultadosComponent {
             break;
           case "Frío":
             if(this.edad == "30-50 años" && this.pAlojamiento == "Hotel de Lujo" && this.pActividad == "Cultura y Museos" && this.dViaje == "1-2 semanas"){
-                
+
                 this.destinoService.destinoA = "Toronto";
                 this.destinoService.destinoE = "Berlín";
 
@@ -174,7 +174,7 @@ export class ResultadosComponent {
                 this.destinoService.destinoE = "Madrid";
 
               } else if(this.edad == "Más de 50 años" && this.pAlojamiento == "Hotel de Lujo"){
-                
+
                 this.destinoService.destinoA = "Nueva York";
                 this.destinoService.destinoE = "París";
 
@@ -182,14 +182,14 @@ export class ResultadosComponent {
             } else if(this.dViaje == "Menos de una semana"){
 
               if(this.edad == "Menos de 30 años" && this.pAlojamiento == "Airbnb" && this.pActividad == "Relax y Bienestar"){
-                
+
                 this.destinoService.destinoA = "Miami";
                 this.destinoService.destinoE = "Viena";
 
 
 
               } else if(this.edad == "30-50 años" && this.pAlojamiento == "Hotel de Lujo" && this.pActividad == "Deportes y Aventuras"){
-                
+
                 this.destinoService.destinoA = "Chicago";
                 this.destinoService.destinoE = "Londres";
 
@@ -205,6 +205,6 @@ export class ResultadosComponent {
       this.destinoService.destinoA = "Bora Bora";
       this.destinoService.destinoE = "Dubái";
     }
-    
+
  }
 }

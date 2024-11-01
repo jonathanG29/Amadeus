@@ -8,7 +8,7 @@
     <div class="titulo">
         <h1 class="scale-in-ver-center">{{pregunta}}</h1>
     </div>
-    
+
     <div class="container">
         <label for="opc1">
             <div class="card">
@@ -31,7 +31,7 @@
                     <img [src]="img2" alt="imagen_montaña">
                     <h3>{{opcion2}}</h3>
                 </div>
-    
+
                 <div class="face back">
                     <h3>¿Sabias qué...</h3>
                     <p>{{dato2}}
@@ -46,7 +46,7 @@
                     <img [src]="img3"  alt="imagen_cuidad">
                     <h3>{{opcion3}}</h3>
                 </div>
-            
+
                 <div class="face back">
                     <h3>¿Sabias qué...</h3>
                     <p>{{dato3}}
@@ -57,23 +57,23 @@
     </div>
     <form class="radio">
         <div>
-            
-            <label> 
-                <input id="opc1" type="radio" [value]="opcion1" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
+
+            <label>
+                <input id="opc1" type="radio" [value]="opcion1" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()">
             </label>
-            
+
         </div>
         <div>
             <label>
-                <input id="opc2" type="radio" [value]="opcion2" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
+                <input id="opc2" type="radio" [value]="opcion2" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()">
             </label>
-            
+
         </div>
         <div>
             <label>
                 <input id="opc3" type="radio" [value]="opcion3" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()">
             </label>
-            
+
         </div>
     </form>
 

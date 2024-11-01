@@ -101,7 +101,7 @@ export class TarjetasComponent {
   img3 = this.imgUrl[this.indice][2];
   dato1 = this.dato[this.indice][0];
   dato2 = this.dato[this.indice][1];
-  dato3 = this.dato[this.indice][2];  
+  dato3 = this.dato[this.indice][2];
 
   verificarSeleccion(){
 
@@ -180,7 +180,7 @@ atras() {
     this.destinoService.respuestasSer.pop();
     this.disAtras = true;
     return;
-    
+
   }
 
   if(this.indice == 5){
