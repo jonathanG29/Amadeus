@@ -13,7 +13,7 @@ export class DestinoService {
   respuestasSer:String[] = [];
   nombreS:String = "";
   correoS:String = "";
-  avatar: String = "";
+  avatar: String = "https://cdn-icons-png.flaticon.com/512/9187/9187532.png";
   srcA: String = "";
   srcE: String = "";
 

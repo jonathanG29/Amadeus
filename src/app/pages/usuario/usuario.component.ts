@@ -20,12 +20,15 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   avatar: any;
   nombre: any;
   correo: any;
+  ruta: String = "";
 
   ngOnInit(): void {
+    
     this.routerSubscription = this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.obtenerDatosUsuario()
+        this.ruta = this.router.url;
       });
   }
 
@@ -40,7 +43,7 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   }
 
   cerrarSesion(){
-    this.destinoService.avatar = "";
+    this.destinoService.avatar = "https://cdn-icons-png.flaticon.com/512/9187/9187532.png";
     this.destinoService.nombreS = "";
     this.destinoService.correoS = "";
     this.router.navigate(["/index"])
