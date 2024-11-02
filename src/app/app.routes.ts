@@ -9,12 +9,16 @@ import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
 import { Component } from '@angular/core';
 
 export const routes: Routes = [
-    {path:'', component:IndexComponent},
     {path:'index', component:IndexComponent},
     {path:'destino', component:DestinoComponent},
     {path:'perfil', component:PerfilComponent},
     {path:'planes', component:PlanesComponent},
     {path:'resultados', component:ResultadosComponent},
     {path:'tarjetas', component:TarjetasComponent},
-    {path:'planes', component:PlanesComponent}
+    {path:'planes', component:PlanesComponent},
+    {
+        path: '',
+        redirectTo: 'index',
+        pathMatch: 'full'
+    }
 ];

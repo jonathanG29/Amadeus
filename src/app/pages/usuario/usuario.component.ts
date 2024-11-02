@@ -29,6 +29,8 @@ export class UsuarioComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.obtenerDatosUsuario()
         this.ruta = this.router.url;
+        console.log(this.ruta);
+        
       });
   }
 
