@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import axios from 'axios';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,10 +8,17 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private apiUrl = 'http://localhost:8080/api/auth'; // URL of the API
 
-  constructor(private http: HttpClient) {}
-
   // Método para autenticar al usuario
   authenticate(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { email, password });
+    return new Observable(observer => {
+      axios.post(`${this.apiUrl}/login`, { email, password })
+        .then(response => {
+          observer.next(response.data);
+          observer.complete();
+        })
+        .catch(error => {
+          observer.error(error);
+        });
+    });
   }
 }
