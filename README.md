@@ -93,6 +93,9 @@ El proyecto utiliza el módulo de enrutamiento de Angular para definir las rutas
    ];
    ```
 
+## Evidencia de funcionalidad del Perfil
+  https://github.com/user-attachments/assets/3872a747-a5ef-4b68-9b61-4463268f8f17
+
 ## Contribuciones
 Las contribuciones son bienvenidas. Para contribuir, sigue estos pasos:
 
