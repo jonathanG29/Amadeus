@@ -42,6 +42,32 @@ export class DestinoService {
     }
   }
 
+  /**
+   * Este método realiza una solicitud HTTP GET a un endpoint determinado y devuelve la respuesta del servidor.
+   * Si ocurre un error durante la solicitud, se lanza una excepción.
+   *
+   * @param {string} endpoint - El endpoint al que se realizará la solicitud GET.
+   * @returns {Promise<any>} Una promesa que se resuelve con los datos de la respuesta del servidor.
+   * @throws {Error} Si ocurre un problema durante la solicitud, como errores de red o del servidor.
+   *
+   * @example
+   * try {
+   *   const data = await this.getDestinity('/api/endpoint/nameDestinity1/nameDestinity2');
+   *   console.log(data);
+   * } catch (error) {
+   *   console.error('Error al obtener los datos', error);
+   * }
+   */
+  async getDestinity(endpoint: string): Promise<any> {
+    try {
+      const response = await this.axiosClient.get(endpoint);
+      return response.data;
+    } catch (error) {
+      console.error('Error', error);
+      throw error;
+    }
+  }
+
   indice: number = 0;
   destinoA: String = '';
   destinoE: String = '';
